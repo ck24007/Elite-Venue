@@ -1,0 +1,83 @@
+.contact {
+    padding: 0px 16px;
+  }
+  
+  .contactContainer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  /* LEFT */
+  .leftContent {
+    flex: 1;
+  }
+  
+  .heading {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .subText {
+    color: #6b7280;
+    margin-bottom: 25px;
+  }
+  
+  .info p {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  /* RIGHT */
+  .rightForm {
+    flex: 1;
+  }
+  
+  .form {
+    background: #f9fafb;
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form input,
+  .form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+  }
+  
+  .form input:focus,
+  .form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+  
+  .form button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background: #1e40af;
+  }
+  
+  /* 📱 Mobile */
+  @media (max-width: 768px) {
+    .contactContainer {
+      flex-direction: column;
+    }
+  }
+  
