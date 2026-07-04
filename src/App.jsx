@@ -16,22 +16,28 @@ function App() {
 
 
   const [section, setSection]=useState(homeRef)
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    if (section?.current) {
-      section.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  },[section])
+  //   if (section?.current) {
+  //     section.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // },[section])
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
   return (
     <>
       <Navbar
-        onHome={()=>{setSection(homeRef)}}
-        onWhy={()=>setSection(whytostayRef)}
-        onAbout={()=>setSection(aboutRef)}
-        onContact={()=>setSection(contactRef)}
+        onHome={()=>{scrollToSection(homeRef)}}
+        onWhy={()=>scrollToSection(whytostayRef)}
+        onAbout={()=>scrollToSection(aboutRef)}
+        onContact={()=>scrollToSection(contactRef)}
       />
 
       <div ref={homeRef}>
