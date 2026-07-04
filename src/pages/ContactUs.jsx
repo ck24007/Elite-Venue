@@ -1,6 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from "./ContactUs.module.css";
 const ContactUs = () => {
+  const [name, setName]=useState("")
+  const [email, setEmail]=useState("")
+
+  const [phone, setPhone]=useState("")
+
+  const [msg, setMsg]=useState("")
+  const ownerNumber="+91 9563826000"
+  const handleContinue=(e)=>{
+    e.preventDefault()
+
+
+    const message=`
+    Name:${name}
+    Mobile:${phone}
+    Email:${email}
+    Message:${msg}`
+
+    const whatsappUrl = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, "_blank")
+    
+  }
+
   return (
     <div>
       <div className={style.contact}>
@@ -15,20 +37,20 @@ const ContactUs = () => {
           </p>
 
           <div className={style.info}>
-            <p><strong>📍 Address:</strong> The Elite Venue PG, Bangalore</p>
-            <p><strong>📞 Phone:</strong> +91 98765 43210</p>
-            <p><strong>✉️ Email:</strong> support@elitevenuepg.com</p>
+            <p><strong>📍 Address:</strong> The Elite Venue PG, Gurugram</p>
+            <p><strong>📞 Phone:</strong> +91 9563826000</p>
+            <p><strong>✉️ Email:</strong> theelitevenuepg@gmail.com</p>
           </div>
         </div>
 
         {/* RIGHT : Form */}
         <div className={style.rightForm}>
-          <form className={style.form}>
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
-            <input type="tel" placeholder="Phone Number" />
-            <textarea placeholder="Your Message" rows="4" />
-            <button type="submit">Send Message</button>
+          <form className={style.form} onSubmit={handleContinue}>
+            <input type="text" placeholder="Your Name" value={name} onChange={(e)=>setName(e.target.value)} />
+            <input type="email" placeholder="Your Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
+            <input type="tel" placeholder="Phone Number" value={phone} onChange={(e)=>{setPhone(e.target.value)}} />
+            <textarea placeholder="Your Message" value={msg} rows="4" onChange={(e)=>setMsg(e.target.value)} />
+          {name && phone &&  <button type="submit">Send Message</button>}
           </form>
         </div>
 

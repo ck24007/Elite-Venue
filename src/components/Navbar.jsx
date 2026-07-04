@@ -47,7 +47,12 @@ const Navbar = ({onHome, onWhy, onAbout, onContact}) => {
           ))}
           </div>
           <div className='flex items-center space-x-10'>
-          <button className={style.bookBtn}>Book Now</button>
+          <button
+            className={style.bookBtn}
+            onClick={()=>onContact()}
+          >
+            Book Now
+          </button>
           {/* Mobile Button */}
           <button
             className="md:hidden text-2xl"
