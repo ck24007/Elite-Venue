@@ -20,7 +20,13 @@ const ContactUs = () => {
 
     const whatsappUrl = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
-    
+
+    setTimeout(() => {
+      setName("")
+      setEmail("")
+      setPhone("")
+      setMsg("")
+    }, 1000)
   }
 
   return (
