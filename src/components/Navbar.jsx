@@ -42,7 +42,7 @@ const Navbar = ({onHome, onWhy, onAbout, onContact}) => {
           <div className='flex items-center space-x-10'>
           {navbarLabels && navbarLabels.map((item, index)=>(
             <div className="hidden md:flex space-x-8" key={item.id}>
-            <div onClick={item.action} className="hover:text-blue-600 cursor-pointer">{item.label}</div>
+            <div onClick={item.action} className={`${style.navLink} cursor-pointer`}>{item.label}</div>
           </div>
           ))}
           </div>
@@ -56,6 +56,7 @@ const Navbar = ({onHome, onWhy, onAbout, onContact}) => {
           {/* Mobile Button */}
           <button
             className="md:hidden text-2xl"
+            style={{ color: "#1E3A8A", backgroundColor: "transparent", border: "none" }}
             onClick={() => setOpen(!open)}
           >
             {open ? <FaTimes /> : <FaBars />}
@@ -68,7 +69,7 @@ const Navbar = ({onHome, onWhy, onAbout, onContact}) => {
       {open && (
         navbarLabels && navbarLabels.map((item,index)=>(
         <div className="md:hidden bg-white shadow-lg" key={item.id}>
-          <div onClick={() =>{item.action(); setOpen(false)}} className="block px-4 py-3 border-b" to={item.path}>{item.label}</div>
+          <div onClick={() =>{item.action(); setOpen(false)}} className={`${style.navLink} block px-4 py-3 border-b`} to={item.path}>{item.label}</div>
         </div>)
         )
       )}

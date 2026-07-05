@@ -16,15 +16,6 @@ function App() {
 
 
   const [section, setSection]=useState(homeRef)
-  // useEffect(()=>{
-
-  //   if (section?.current) {
-  //     section.current.scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start",
-  //     });
-  //   }
-  // },[section])
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({
       behavior: "smooth",

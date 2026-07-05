@@ -7,7 +7,7 @@ const ContactUs = () => {
   const [phone, setPhone]=useState("")
 
   const [msg, setMsg]=useState("")
-  const ownerNumber="+91 9563826000"
+  const ownerNumber="919563826000"
   const handleContinue=(e)=>{
     e.preventDefault()
 
@@ -50,7 +50,7 @@ const ContactUs = () => {
             <input type="email" placeholder="Your Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
             <input type="tel" placeholder="Phone Number" value={phone} onChange={(e)=>{setPhone(e.target.value)}} />
             <textarea placeholder="Your Message" value={msg} rows="4" onChange={(e)=>setMsg(e.target.value)} />
-          {name && phone &&  <button type="submit">Send Message</button>}
+            <button type="submit" disabled={!name || !email || !phone || !msg}>Send Message</button>
           </form>
         </div>
 

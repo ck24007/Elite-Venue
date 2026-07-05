@@ -2,6 +2,16 @@
     width: 3rem;
     height: 3rem;
 }
+
+.navLink {
+    color: #000000;
+    transition: color 0.2s ease;
+}
+
+.navLink:hover {
+    color: #2563eb;
+}
+
 .bookBtn{
     background-color: black;
     color: white;
